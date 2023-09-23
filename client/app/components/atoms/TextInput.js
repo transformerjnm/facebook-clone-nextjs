@@ -6,7 +6,7 @@ import EmojiEmotionsIcon from '@mui/icons-material/EmojiEmotions';
 import ImageIcon from '@mui/icons-material/Image';
 import ThumbUpIcon from '@mui/icons-material/ThumbUp';
 import SendIcon from '@mui/icons-material/Send';
-//import { lightTheme } from '../../theme';
+import { lightTheme } from '../../theme';
 
 /**
  * Summary:
@@ -51,7 +51,6 @@ export default ({ variant }) => {
 	};
 
 	if (variant === "search") {
-		/*
 		input = (
 			<FormControl hiddenLabel fullWidth>
 				<FilledInput
@@ -64,7 +63,7 @@ export default ({ variant }) => {
 					}
 				/>
 			</FormControl>
-		);*/
+		);
 	} else if (variant === "message") {
 		input = (
 			<Grid container alignItems="center">
