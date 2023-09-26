@@ -1,0 +1,7 @@
+.grid {
+	padding: 0.5rem 0;
+}
+.secondaryTextStyle {
+	color: var(--mui-palette-text-secondary);
+	display: inline;
+}

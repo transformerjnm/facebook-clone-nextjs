@@ -1,0 +1,20 @@
+.searchStyles {
+	border-radius: 50px;
+}
+.searchIcon {
+	color: var(--mui-palette-primary-light);
+}
+.messageStyles {
+	padding-left: 1.25rem;
+	padding-right: 1.25rem;
+	padding-top: 4px;
+	padding-bottom: 4px;
+	border-radius: 50px;
+	height: 32px;
+}
+.commentStyles {
+	border-radius: 50px;
+}
+.newPostStyles {
+	border-radius: 50px;
+}

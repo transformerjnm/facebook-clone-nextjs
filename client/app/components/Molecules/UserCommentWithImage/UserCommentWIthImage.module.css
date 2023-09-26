@@ -1,0 +1,13 @@
+.container {
+	width: auto;
+	background-color: var(--mui-palette-primary-main);
+	border-radius: 15px;
+	padding: 0.25rem;
+}
+.link {
+	color: var(--mui-palette-text-primary);
+	text-decoration: none;
+}
+.bold {
+	font-weight: bold;
+}

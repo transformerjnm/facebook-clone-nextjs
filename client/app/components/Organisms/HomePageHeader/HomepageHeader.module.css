@@ -1,0 +1,9 @@
+.container {
+	height: 56px;
+	background-color: var(--mui-palette-primary-light);
+	padding: 0 1rem;
+}
+.button {
+	background-color: var(--mui-palette-primary-main);
+	padding: 6px;
+}

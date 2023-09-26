@@ -1,7 +1,8 @@
 'use client';
-import { createTheme } from '@mui/material/styles';
+//import { createTheme } from '@mui/material/styles';
+import { experimental_extendTheme as extendTheme } from '@mui/material/styles';
 /** Light Theme */
-export const lightTheme = createTheme({
+export const lightTheme = extendTheme({
 	breakpoints: {
 		values: {
 			xs: 0,
@@ -16,6 +17,11 @@ export const lightTheme = createTheme({
 			'Arial',
 			'sans-serif',
 		].join(','),
+	},
+	MuiTypography: {
+		variantMapping: {
+			body1: 'p'
+		}
 	},
 	palette: {
 		background: {
@@ -44,11 +50,6 @@ export const lightTheme = createTheme({
 			main: '#31a24c'
 		}
 	},
-	MuiTypography: {
-		variantMapping: {
-			body1: 'p'
-		}
-	}
 });
 //Headers
 lightTheme.typography.h1 = {

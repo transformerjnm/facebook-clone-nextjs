@@ -1,18 +1,19 @@
-
-.active {
+.link {
+	color: var(--mui-palette-primary-dark);
+	padding-top: 5px;
+}
+.link:active {
 	color: #1878f2 !important;
 }
-
-.active::after {
+.link:active::after {
 	display: block;
 	position: absolute;
 	left: -54%;
-	content: '';
+	content: "";
 	width: 100px;
 	height: 3px;
 	background-color: #1878f2 !important;
 }
-
 .navIconContainer {
 	max-width: 100%;
 	width: 100px;
@@ -22,9 +23,7 @@
 	text-align: center;
 	padding-top: 3px;
 }
-
 .navIconContainer:hover {
 	background: #f0f2f5;
 	cursor: pointer;
 }
-  

@@ -1,0 +1,30 @@
+.paper {
+	height: 40px;
+	width: 40px;
+	border-radius: 50%;
+}
+.container {
+	position: relative;
+	width: 40px;
+	height: 40px;
+}
+.image {
+	object-fit: cover;
+	height: 40px;
+	width: 40px;
+	border-radius: 50%;
+	position: absolute;
+	bottom: 0;
+}
+.statusCircleStyles {
+	width: 8px;
+	height: 8px;
+	border-radius: 50%;
+	background-color: var(--mui-palette-success-main);
+	transform: translate(50%, 50%);
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	margin: 5px;
+	border: 2px solid var(--mui-palette-primary-light);
+}
