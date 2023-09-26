@@ -1,9 +1,9 @@
 import { Typography, Grid, Box } from "@mui/material";
 import Container from "@mui/material/Container";
-import CreateNewPost from "../components/Organisms/CreateNewPost";
+import CreateNewPost from "../components/Organisms/CreateNewPost/CreateNewPost";
 import HomePageHeader from "../components/Organisms/HomePageHeader/HomePageHeader";
 import UnorderedListOfImagesWithText from "../components/Organisms/UnorderedListOfImagesWithText";
-import UserPost from "../components/Organisms/UserPost";
+import UserPost from "../components/Organisms/UserPost/UserPost";
 import ViewAndAddPostComment from "../components/Organisms/ViewAndAddPostComment/ViewAndAddPostComment";
 import CircleImage from "../components/Atoms/CircleImage/CircleImage";
 import HomeIcon from "@mui/icons-material/Home";

@@ -1,0 +1,17 @@
+.icon {
+	font-style: 24px;
+}
+.iconPhoto {
+	color: green;
+}
+.iconFeeling {
+	color: #f5bb41;
+}
+.paper {
+	padding: 1rem;
+	margin-top: 1.5rem;
+	margin-bottom: 1.5rem;
+}
+.divider {
+	margin: 0.5rem;
+}

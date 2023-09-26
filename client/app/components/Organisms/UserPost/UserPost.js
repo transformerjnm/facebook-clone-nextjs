@@ -2,10 +2,11 @@ import { Grid } from "@mui/material";
 import Card from "@mui/material/Card";
 import CardActions from "@mui/material/CardActions";
 import CardContent from "@mui/material/CardContent";
-import CircleImageWithTitle from "../Molecules/CircleImageWithTitle/CircleImageWithTitle";
+import CircleImageWithTitle from "../../Molecules/CircleImageWithTitle/CircleImageWithTitle";
 import Image from "next/image";
-import PostInteractionCluster from "../Molecules/PostInteractionCluster/PostInteractionCluster";
+import PostInteractionCluster from "../../Molecules/PostInteractionCluster/PostInteractionCluster";
 import Typography from "@mui/material/Typography";
+import styles from "./UserPost.module.css";
 
 /**
  * Summary:
@@ -43,19 +44,11 @@ export default (props) => {
 		if (props.postImages.length === 1) {
 			return (
 				<Image
+					className={styles.imageLarge}
 					src={props.postImages[0].imageSrc}
 					alt={props.postImages[0].imageAlt}
-					imageStyle={{
-						Height: "500px",
-						width: "100%",
-					}}
 					height={500}
 					width={500}
-					/**
-					 * style paddingTop makes the height of a div that it loads in the same height of the image.
-					 * The attribute iconContainerStyle did not work so I had to use inline styles.
-					 */
-					style={{ paddingTop: "500px" }}
 				/>
 			);
 		} else if (props.postImages.length === 2) {
@@ -63,36 +56,20 @@ export default (props) => {
 				<Grid container spacing={1} direction="row">
 					<Grid item xs={6}>
 						<Image
+							className={styles.imageLarge}
 							src={props.postImages[0].imageSrc}
 							alt={props.postImages[0].imageAlt}
-							imageStyle={{
-								Height: "500px",
-								width: "100%",
-							}}
 							height={500}
 							width={500}
-							/**
-							 * style paddingTop makes the height of a div that it loads in the same height of the image.
-							 * The attribute iconContainerStyle did not work so I had to use inline styles.
-							 */
-							style={{ paddingTop: "500px" }}
 						/>
 					</Grid>
 					<Grid item xs={6}>
 						<Image
+							className={styles.imageLarge}
 							src={props.postImages[1].imageSrc}
 							alt={props.postImages[1].imageAlt}
-							imageStyle={{
-								Height: "500px",
-								width: "100%",
-							}}
 							height={500}
 							width={500}
-							/**
-							 * style paddingTop makes the height of a div that it loads in the same height of the image.
-							 * The attribute iconContainerStyle did not work so I had to use inline styles.
-							 */
-							style={{ paddingTop: "500px" }}
 						/>
 					</Grid>
 				</Grid>
@@ -102,57 +79,31 @@ export default (props) => {
 				<Grid container direction="row" spacing={1}>
 					<Grid item xs={6}>
 						<Image
+							className={styles.imageLarge}
 							src={props.postImages[0].imageSrc}
 							alt={props.postImages[0].imageAlt}
-							imageStyle={{
-								Height: "500px",
-								width: "100%",
-							}}
 							height={500}
 							width={500}
-							/**
-							 * style paddingTop makes the height of a div that it loads in the same height of the image.
-							 * The attribute iconContainerStyle did not work so I had to use inline styles.
-							 */
-							style={{ paddingTop: "500px" }}
 						/>
 					</Grid>
 					<Grid item xs={6}>
 						<Grid container direction="column" spacing={1}>
 							<Grid item xs={12}>
 								<Image
+									className={styles.imageSmall}
 									src={props.postImages[1].imageSrc}
 									alt={props.postImages[1].imageAlt}
-									imageStyle={{
-										Height: "246px",
-										width: "100%",
-									}}
-									height={500}
-									width={500}
-									/**
-									 * style paddingTop makes the height of a div that it loads in the same height of the image.
-									 * The attribute iconContainerStyle did not work so I had to use inline styles.
-									 * minus the spacing for the grid so that the images all line up.
-									 */
-									style={{ paddingTop: "246px" }}
+									height={246}
+									width={246}
 								/>
 							</Grid>
 							<Grid item xs={12}>
 								<Image
+									className={styles.imageSmall}
 									src={props.postImages[2].imageSrc}
 									alt={props.postImages[2].imageAlt}
-									imageStyle={{
-										Height: "246px",
-										width: "100%",
-									}}
-									height={500}
-									width={500}
-									/**
-									 * style paddingTop makes the height of a div that it loads in the same height of the image.
-									 * The attribute iconContainerStyle did not work so I had to use inline styles.
-									 * minus the spacing for the grid so that the images all line up.
-									 */
-									style={{ paddingTop: "246px" }}
+									height={246}
+									width={246}
 								/>
 							</Grid>
 						</Grid>
@@ -163,7 +114,7 @@ export default (props) => {
 	};
 
 	return (
-		<Card variant="outlined" style={{ margin: "1.5rem 0" }}>
+		<Card variant="outlined" className={styles.card}>
 			<CardContent>
 				<CircleImageWithTitle
 					imageUrl={props.authorImageUrl}

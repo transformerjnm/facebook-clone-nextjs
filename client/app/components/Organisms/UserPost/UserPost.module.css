@@ -1,0 +1,13 @@
+.card {
+	margin: 1.5rem 0;
+}
+.imageLarge {
+	height: 500px;
+	width: 100%;
+	padding-top: 500px;
+}
+.imageSmall {
+	height: 246px;
+	width: 100%;
+	padding-top: 246px;
+}

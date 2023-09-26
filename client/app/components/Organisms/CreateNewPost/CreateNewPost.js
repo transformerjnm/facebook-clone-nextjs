@@ -1,10 +1,11 @@
 "use client";
 import { Paper, Divider, Grid, Box } from "@mui/material";
-import CircleImageWithTextInput from "../Molecules/CircleImageWithTextInput";
-import ActionIconButton from "../Atoms/ActionIconButton/ActionIconButton";
+import CircleImageWithTextInput from "../../Molecules/CircleImageWithTextInput";
+import ActionIconButton from "../../Atoms/ActionIconButton/ActionIconButton";
 import VideoCallIcon from "@mui/icons-material/VideoCall";
 import PhotoLibraryIcon from "@mui/icons-material/PhotoLibrary";
 import InsertEmoticonIcon from "@mui/icons-material/InsertEmoticon";
+import styles from "./CreateNewPost.module.css";
 
 /**
  * Summary:
@@ -24,15 +25,6 @@ import InsertEmoticonIcon from "@mui/icons-material/InsertEmoticon";
  *
  */
 export default (props) => {
-	const iconHeightStyles = {
-		fontsize: "24px",
-	};
-	const paperStyles = {
-		padding: "1rem",
-		marginTop: "1.5rem",
-		marginBottom: "1.5rem",
-	};
-
 	let startLiveVideo = () => {
 		console.log("Start live video");
 	};
@@ -46,7 +38,7 @@ export default (props) => {
 	};
 
 	return (
-		<Paper style={paperStyles}>
+		<Paper className={styles.paper}>
 			<CircleImageWithTextInput
 				inputVariant={props.inputVariant}
 				imageSrc={props.imageSrc}
@@ -54,7 +46,7 @@ export default (props) => {
 				onInputSubmit={props.onInputSubmit}
 				onImageClickDestination={props.onImageClickDestination}
 			/>
-			<Divider style={{ margin: ".5rem" }} />
+			<Divider className={styles.divider} />
 			<Grid container alignContent="center">
 				<Box sx={{ display: { sm: "block", md: "none" } }}>
 					<Grid item xs={0} sm={4}>
@@ -62,7 +54,7 @@ export default (props) => {
 							buttonText="Live Video"
 							buttonAction={startLiveVideo}
 						>
-							<VideoCallIcon color="error" style={iconHeightStyles} />
+							<VideoCallIcon color="error" className={styles.icon} />
 						</ActionIconButton>
 					</Grid>
 				</Box>
@@ -71,7 +63,7 @@ export default (props) => {
 						buttonText="Photo/Video"
 						buttonAction={createImagePost}
 					>
-						<PhotoLibraryIcon style={(iconHeightStyles, { color: "green" })} />
+						<PhotoLibraryIcon className={(styles.icon, styles.iconPhoto)} />
 					</ActionIconButton>
 				</Grid>
 
@@ -80,9 +72,7 @@ export default (props) => {
 						buttonText="Feeling/Activity"
 						buttonAction={updateFeeling}
 					>
-						<InsertEmoticonIcon
-							style={(iconHeightStyles, { color: "#f5bb41" })}
-						/>
+						<InsertEmoticonIcon className={(styles.icon, styles.iconFeeling)} />
 					</ActionIconButton>
 				</Grid>
 			</Grid>
