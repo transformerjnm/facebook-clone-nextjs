@@ -1,19 +1,22 @@
 const jwt = require("jsonwebtoken");
-const ENV = require('dotenv').config()
+require('dotenv').config()
 
 const verifyToken = (req, res, next) => {
-    const token = req?.headers?.cookie
-    if(req?.url === '/login'){
+    if(req?.url === '/login' || req?.url === '/register'){
         next()
     }else{
-        if(!token){
+        const auth = req?.headers?.authorization
+        if(!auth){
             res.statusCode = 401
-            res.send('dont forget to send request with token as a cookie in the header!')
+            res.json({
+                success: false, 
+                message: 'dont forget to send request with token as a cookie in the header!'
+            })
         }
             
-        if(token){
-            const cookie = token.split("=")[1]
-            const isValid = jwt.verify(cookie, process.env.JWT_SECRET, function(error, decoded){
+        if(auth){
+            const token = auth.split(" ")[1]
+            const isValid = jwt.verify(token, process.env.JWT_SECRET, function(error, decoded){
                 if(error)
                     return false
         
@@ -22,9 +25,9 @@ const verifyToken = (req, res, next) => {
             })
             if(!isValid){
                 res.statusCode = 401
-                res.send('token not valid, regenerate a token with /login!')
+                res.send({success: false, message: "token is not valid, please generate a new one!"})
             }else{
-                console.log('token is verified!')
+                //token is valid
                 next()
             } 
         }

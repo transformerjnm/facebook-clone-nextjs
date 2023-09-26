@@ -7,7 +7,7 @@ const jwt = require("jsonwebtoken");
 homeRoute.route('/')
 .get((req, res) => {
     res.json({
-        "isValid": res.statusCode === 200 ? true : false
+        isValid: res.statusCode === 200 ? true : false
     })
 })
 
