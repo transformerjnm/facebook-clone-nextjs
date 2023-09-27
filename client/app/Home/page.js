@@ -26,55 +26,61 @@ export default (props) => {
 		scrollbarWidth: "none",
 		overflowStyle: "none",
 	};
+
+	let testAuthenticatedUser = {
+		imgUrl:
+			"https://images.unsplash.com/photo-1568602471122-7832951cc4c5?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MXx8bWFufGVufDB8fDB8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1100&q=60",
+		name: "James",
+		alt: "striking young James",
+	};
 	return (
 		<>
 			<HomePageHeader
-				userProfileImage="https://images.unsplash.com/photo-1568602471122-7832951cc4c5?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MXx8bWFufGVufDB8fDB8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1100&q=60"
-				imagaeAlt="authenticated user"
+				userProfileImage={testAuthenticatedUser.imgUrl}
+				imagaeAlt={testAuthenticatedUser.alt}
 				imageDestination="/"
-				authenticatedUsername="blaine"
+				authenticatedUsername={testAuthenticatedUser.name}
 			/>
 			<Grid container justify="center">
-				<Box sx={{ display: { xs: "block", md: "none" } }}>
-					<Grid item md={3} lg={3} xl={2} style={scrollStyle}>
-						<UnorderedListOfImagesWithText
-							listItemsArray={[
-								{
-									image: <HomeIcon fontSize="large" />,
-									name: "Home",
-									action: null,
-								},
-								{
-									image: <PeopleIcon fontSize="large" />,
-									name: "Friends",
-									action: null,
-								},
-								{
-									image: <StorefrontIcon fontSize="large" />,
-									name: "Marketplace",
-									action: null,
-								},
-								{
-									image: <BookmarkIcon fontSize="large" />,
-									name: "Save",
-									action: null,
-								},
-								{
-									image: (
-										<CircleImage
-											alt="girl"
-											onImageClickDestination="/"
-											src="https://images.unsplash.com/photo-1563306406-e66174fa3787?ixid=MXwxMjA3fDB8MHxzZWFyY2h8Nnx8Z2lybHxlbnwwfHwwfA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=60"
-										/>
-									),
-									name: "Mary",
-									action: null,
-								},
-							]}
-						/>
-					</Grid>
-				</Box>
-				<Grid item md={9} lg={6} style={scrollStyle}>
+				<Grid item md={3} lg={3} xl={2} style={scrollStyle}>
+					<UnorderedListOfImagesWithText
+						listItemsArray={[
+							{
+								image: <HomeIcon fontSize="large" />,
+								name: "Home",
+								action: null,
+							},
+							{
+								image: <PeopleIcon fontSize="large" />,
+								name: "Friends",
+								action: null,
+							},
+							{
+								image: <StorefrontIcon fontSize="large" />,
+								name: "Marketplace",
+								action: null,
+							},
+							{
+								image: <BookmarkIcon fontSize="large" />,
+								name: "Save",
+								action: null,
+							},
+							{
+								image: (
+									<CircleImage
+										alt={testAuthenticatedUser.alt}
+										onImageClickDestination="/"
+										src={testAuthenticatedUser.imgUrl}
+									/>
+								),
+								name: testAuthenticatedUser.name,
+								action: null,
+							},
+						]}
+					/>
+				</Grid>
+
+				<Grid item md={9} lg={6} xl={8} style={scrollStyle}>
 					<Container>
 						<CreateNewPost
 							inputVariant="newPost"
@@ -154,9 +160,9 @@ export default (props) => {
 						/>
 					</Container>
 				</Grid>
-				<Box sx={{ display: { xs: "block", lg: "none" } }}>
-					<Grid item md={3} lg={3} xl={2} style={scrollStyle}>
-						{/** TODO: Typographyt should be made into its own componetn with search icon */}
+
+				<Grid item sm={0} md={3} lg={3} xl={2} style={scrollStyle}>
+					<Box sx={{ display: { xs: "none", lg: "block" } }}>
 						<Typography>Contacts</Typography>
 						<UnorderedListOfImagesWithText
 							listItemsArray={[
@@ -221,8 +227,8 @@ export default (props) => {
 								},
 							]}
 						/>
-					</Grid>
-				</Box>
+					</Box>
+				</Grid>
 			</Grid>
 		</>
 	);
