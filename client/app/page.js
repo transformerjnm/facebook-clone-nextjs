@@ -1,9 +1,8 @@
-
-
+import AuthenticationForm from "./components/Molecules/AuthenticationForm";
 export default function Home() {
-  return (
-    <main>
-      <h1>Please Login</h1>
-    </main>
-  )
+	return (
+		<main>
+			<AuthenticationForm />
+		</main>
+	);
 }

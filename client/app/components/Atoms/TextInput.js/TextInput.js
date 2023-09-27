@@ -17,10 +17,12 @@ import styles from "./TextInput.module.css";
  * they will need to be destructured from props and added to an onChange to the right FilledInput components
  *
  * Props:
- * variant: search, message, comment (tells us which input to use)
+ * children: icon to display
+ * placeHolderText: text to display before typing
+ * variant: search, message, comment, default changes style of input
  * submitInputValue: a function that is called onSubmit of the FilledInput component
  */
-export default ({ variant }) => {
+export default ({ children, placeHolderText = "", variant }) => {
 	const [isTyping, setIsTyping] = useState(false);
 	let input;
 
@@ -103,6 +105,19 @@ export default ({ variant }) => {
 					margin="dense"
 					placeholder="What's on your mind?"
 					fullWidth
+				/>
+			</FormControl>
+		);
+	} else if (variant === "default") {
+		input = (
+			<FormControl hiddenLabel fullWidth>
+				<FilledInput
+					className={styles.newPostStyles}
+					disableUnderline={true}
+					margin="dense"
+					placeholder={placeHolderText}
+					fullWidth
+					endAdornment={children}
 				/>
 			</FormControl>
 		);
